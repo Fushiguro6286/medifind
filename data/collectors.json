@@ -1,0 +1,74 @@
+{
+  "tata-1mg": {
+    "collectorId": "c_mt4brsnv2m1udv1uq8",
+    "name": "medifind-tata-1mg",
+    "status": "done",
+    "viewUrl": "https://brightdata.com/cp/scrapers/c_mt4brsnv2m1udv1uq8",
+    "seedUrl": "https://www.1mg.com/search/all?name=digital%20thermometer"
+  },
+  "zepto": {
+    "error": "spawn EINVAL",
+    "status": "done",
+    "updatedAt": "2026-08-22T12:46:51.462Z",
+    "collectorId": "c_mt4dak661vbaay3lvh",
+    "name": "medifind-zepto",
+    "viewUrl": "https://brightdata.com/cp/scrapers/c_mt4dak661vbaay3lvh",
+    "seedUrl": "https://www.zeptonow.com/search?query=digital%20thermometer"
+  },
+  "blinkit": {
+    "error": "spawn EINVAL",
+    "status": "done",
+    "updatedAt": "2026-08-22T12:46:54.517Z",
+    "collectorId": "c_mt4dalu72tulxydu6",
+    "name": "medifind-blinkit",
+    "viewUrl": "https://brightdata.com/cp/scrapers/c_mt4dalu72tulxydu6",
+    "seedUrl": "https://blinkit.com/s/?q=digital%20thermometer"
+  },
+  "pharmeasy": {
+    "error": "spawn EINVAL",
+    "status": "done",
+    "updatedAt": "2026-08-22T13:10:28.486Z",
+    "collectorId": "c_mt4dhi2rc9t4o6a9o",
+    "name": "medifind-pharmeasy",
+    "viewUrl": "https://brightdata.com/cp/scrapers/c_mt4dhi2rc9t4o6a9o",
+    "seedUrl": "https://pharmeasy.in/search/all?name=digital%20thermometer",
+    "lastHeal": "2026-08-22T13:10:28.484Z",
+    "lastHealReason": "digital thermometer/viaBrowser: page.goto: Protocol error (Page.navigate): Requested URL (https://pharmeasy.in/search/all?name=digital%20thermometer) is | digital thermometer/unlocker: 0 priced rows (",
+    "healStatus": "done"
+  },
+  "netmeds": {
+    "error": "Command failed: C:\\Program Files\\nodejs\\node.exe C:\\Users\\piyus\\Downloads\\web-scrape\\node_modules\\@brightdata\\cli\\dist\\index.js scraper create https://www.netmeds.com/catalogsearch/result?q=digital%20thermometer Dismiss any location, cookie or login popup before reading results. For each product car",
+    "status": "failed",
+    "updatedAt": "2026-08-22T13:07:55.322Z"
+  },
+  "apollo-247": {
+    "error": "Command failed: C:\\Program Files\\nodejs\\node.exe C:\\Users\\piyus\\Downloads\\web-scrape\\node_modules\\@brightdata\\cli\\dist\\index.js scraper create https://www.apollopharmacy.in/search-medicines/digital%20thermometer Dismiss any location, cookie or login popup before reading results. For each product car",
+    "status": "failed",
+    "updatedAt": "2026-08-22T13:05:37.014Z"
+  },
+  "swiggy-instamart": {
+    "error": "Command failed: C:\\Program Files\\nodejs\\node.exe C:\\Users\\piyus\\Downloads\\web-scrape\\node_modules\\@brightdata\\cli\\dist\\index.js scraper create https://www.swiggy.com/instamart/search?custom_back=true&query=digital%20thermometer The site asks for a delivery location first: dismiss or accept any locat",
+    "status": "failed",
+    "updatedAt": "2026-08-22T13:20:37.046Z"
+  },
+  "flipkart-health": {
+    "error": "Command failed: C:\\Program Files\\nodejs\\node.exe C:\\Users\\piyus\\Downloads\\web-scrape\\node_modules\\@brightdata\\cli\\dist\\index.js scraper create https://healthplus.flipkart.com/search?q=digital%20thermometer Dismiss any location, cookie or login popup before reading results. For each product card in t",
+    "status": "failed",
+    "updatedAt": "2026-08-22T13:22:55.359Z"
+  },
+  "medplusmart": {
+    "error": "Command failed: C:\\Program Files\\nodejs\\node.exe C:\\Users\\piyus\\Downloads\\web-scrape\\node_modules\\@brightdata\\cli\\dist\\index.js scraper create https://www.medplusmart.com/search?q=digital%20thermometer Dismiss any location, cookie or login popup before reading results. For each product card in the s",
+    "status": "failed",
+    "updatedAt": "2026-08-22T13:35:37.087Z"
+  },
+  "medibuddy": {
+    "error": "Command failed: C:\\Program Files\\nodejs\\node.exe C:\\Users\\piyus\\Downloads\\web-scrape\\node_modules\\@brightdata\\cli\\dist\\index.js scraper create https://www.medibuddy.in/medicines/search?q=digital%20thermometer Dismiss any location, cookie or login popup before reading results. For each product card i",
+    "status": "failed",
+    "updatedAt": "2026-08-22T13:31:21.753Z"
+  },
+  "healthhug": {
+    "error": "spawn EINVAL",
+    "status": "failed",
+    "updatedAt": "2026-08-22T12:38:51.232Z"
+  }
+}

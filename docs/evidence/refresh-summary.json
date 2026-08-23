@@ -1,0 +1,46 @@
+{
+  "finishedAt": "2026-08-22T14:02:51.404Z",
+  "durationMs": 682797,
+  "companies": 4,
+  "healthy": 4,
+  "healed": 0,
+  "totalRows": 522,
+  "results": [
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "status": "ok",
+      "rows": 142,
+      "healed": false,
+      "strategy": "unlocker",
+      "ms": 48749
+    },
+    {
+      "slug": "apollo-247",
+      "name": "Apollo 24|7",
+      "status": "ok",
+      "rows": 71,
+      "healed": false,
+      "strategy": "unlocker",
+      "ms": 141865
+    },
+    {
+      "slug": "tata-1mg",
+      "name": "Tata 1mg",
+      "status": "ok",
+      "rows": 191,
+      "healed": false,
+      "strategy": "browser",
+      "ms": 263024
+    },
+    {
+      "slug": "zepto",
+      "name": "Zepto",
+      "status": "ok",
+      "rows": 118,
+      "healed": false,
+      "strategy": "browser",
+      "ms": 682758
+    }
+  ]
+}

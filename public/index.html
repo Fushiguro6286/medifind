@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MediFind — Compare medicines &amp; home medical devices across India</title>
+<meta name="description" content="Search any medicine, home-use medical device or healthcare supply across India's pharmacies and quick-commerce apps. Ranked for your pincode by landed cost, delivery speed and trust — scraped live through Bright Data.">
+<meta name="theme-color" content="#0f7a5f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12h3l2.5-6 4 13 3-8.5 1.8 3.5H21"/>
+      </svg>
+    </span>
+    <span class="brand-text">MediFind<em>.in</em></span>
+  </a>
+
+  <nav class="topnav">
+    <button class="nav-link" data-panel="companies" type="button">Platforms</button>
+    <button class="nav-link" data-panel="trail" type="button">Data trail</button>
+    <button class="nav-link" data-panel="watchlist" type="button">
+      Watchlist <span class="nav-count" id="watchCount" hidden>0</span>
+    </button>
+    <button class="nav-link" data-panel="health" type="button">
+      Health <span class="pulse-dot" id="healthDot" aria-hidden="true"></span>
+    </button>
+    <button class="icon-btn" id="paletteBtn" type="button" aria-label="Open command palette" title="Command palette (Ctrl K)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 15h8"/></svg>
+    </button>
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <!-- ───────────────────────────── search ───────────────────────────── -->
+  <section class="hero" id="hero">
+    <p class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      <span id="eyebrowText">One search · every major Indian health platform · refreshed every 12 hours</span>
+    </p>
+
+    <h1>Find the <em>right price</em> on any<br>medicine or medical device.</h1>
+
+    <p class="sub">Type a product, drop your pincode, and MediFind compares live listings across
+      India's pharmacies and quick-commerce apps — landed cost, delivery time, ratings and all.</p>
+
+    <form class="searchbar" id="searchForm" autocomplete="off">
+      <div class="field field-product">
+        <label for="q">Product</label>
+        <div class="input-wrap">
+          <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" name="q" type="text" placeholder="Paracetamol, pulse oximeter, BP monitor…"
+                 role="combobox" aria-expanded="false" aria-controls="suggestList" aria-autocomplete="list" required>
+          <kbd class="slash-hint" aria-hidden="true">/</kbd>
+          <button class="camera-btn" id="cameraBtn" type="button" aria-label="Search by photo" title="Search by photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.8 7 8 4.8h8L17.2 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13.5" r="3.6"/></svg>
+          </button>
+        </div>
+        <ul class="suggestions" id="suggestList" role="listbox" hidden></ul>
+      </div>
+
+      <div class="field field-pin">
+        <label for="pin">Deliver to</label>
+        <div class="input-wrap">
+          <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <input id="pin" name="pin" type="text" inputmode="numeric" maxlength="6" placeholder="560001" required>
+        </div>
+        <p class="pin-hint" id="pinHint"></p>
+      </div>
+
+      <button class="go" type="submit" id="goBtn">
+        <span class="go-label">Compare</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+
+    <div class="intent" role="radiogroup" aria-label="What matters most">
+      <span class="intent-label">Optimise for</span>
+      <button type="button" class="chip" data-intent="price" role="radio" aria-checked="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.8 5 3.4 5 1.5 5 3.6-2.2 3-5 3-5-1.1-5-3"/></svg>
+        Lowest price
+      </button>
+      <button type="button" class="chip" data-intent="speed" role="radio" aria-checked="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z"/></svg>
+        Fastest delivery
+      </button>
+      <button type="button" class="chip is-active" data-intent="balanced" role="radio" aria-checked="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8h14M7.5 8 5 14.5h5L7.5 8ZM16.5 8 14 14.5h5L16.5 8Z"/></svg>
+        Balanced
+      </button>
+    </div>
+
+    <div class="quick-picks" id="quickPicks"></div>
+
+    <div class="hero-strip" id="heroStrip" hidden></div>
+  </section>
+
+  <!-- ───────────────────────────── results ──────────────────────────── -->
+  <section class="results" id="results" hidden>
+    <div class="results-head">
+      <div class="results-title">
+        <h2 id="resultTitle"></h2>
+        <p class="results-meta" id="resultMeta"></p>
+      </div>
+      <div class="results-tools">
+        <div class="sort-group" id="sortGroup" role="group" aria-label="Sort results">
+          <button type="button" data-sort="best" class="is-active">Best</button>
+          <button type="button" data-sort="price">Price</button>
+          <button type="button" data-sort="eta">Speed</button>
+          <button type="button" data-sort="rating">Rating</button>
+        </div>
+        <div class="tool-group">
+          <button type="button" class="tool-btn" id="shareBtn" title="Copy a shareable link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10.5a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l1-1"/></svg>
+            Share
+          </button>
+          <button type="button" class="tool-btn" id="exportBtn" title="Download these offers">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5"/><path d="M4 18.5V20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1.5"/></svg>
+            Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="coverage" id="coverage"></div>
+    <div class="verdict" id="verdict"></div>
+    <div class="stat-row" id="statRow"></div>
+
+    <div class="filter-bar" id="filterBar" hidden>
+      <label class="switch">
+        <input type="checkbox" id="fRx">
+        <span class="switch-track"><span class="switch-thumb"></span></span>
+        Hide prescription-only
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="fFree">
+        <span class="switch-track"><span class="switch-thumb"></span></span>
+        Free delivery only
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="fRated">
+        <span class="switch-track"><span class="switch-thumb"></span></span>
+        Rated 4★ and up
+      </label>
+      <div class="budget">
+        <label for="fMax">Max landed cost</label>
+        <input type="range" id="fMax" min="0" max="100" value="100">
+        <output id="fMaxOut">any</output>
+      </div>
+      <span class="filter-count" id="filterCount"></span>
+    </div>
+
+    <div class="offer-grid" id="offerGrid"></div>
+    <div class="unavailable" id="unavailable"></div>
+  </section>
+
+  <section class="empty-state" id="emptyState" hidden></section>
+</main>
+
+<!-- ─────────────────────────── compare tray ───────────────────────── -->
+<div class="tray" id="tray" hidden>
+  <div class="tray-inner">
+    <div class="tray-items" id="trayItems"></div>
+    <div class="tray-actions">
+      <button type="button" class="btn-ghost" id="trayClear">Clear</button>
+      <button type="button" class="btn-primary" id="trayCompare">Compare side by side</button>
+    </div>
+  </div>
+</div>
+
+<!-- ───────────────────────────── panels ───────────────────────────── -->
+<aside class="panel" id="panel" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+  <div class="panel-head">
+    <h3 id="panelTitle"></h3>
+    <button class="icon-btn" id="panelClose" type="button" aria-label="Close panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="panel-body" id="panelBody"></div>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+
+<!-- ────────────────────────── compare dialog ──────────────────────── -->
+<dialog class="wide-dialog" id="compareDialog">
+  <div class="dialog-head">
+    <h3>Side by side</h3>
+    <button class="icon-btn" id="compareClose" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="dialog-body" id="compareBody"></div>
+</dialog>
+
+<!-- ───────────────────────── command palette ──────────────────────── -->
+<dialog class="palette" id="palette">
+  <div class="palette-input">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="text" id="paletteQ" placeholder="Search products, jump to a panel, change intent…" autocomplete="off">
+    <kbd>esc</kbd>
+  </div>
+  <ul class="palette-list" id="paletteList" role="listbox"></ul>
+</dialog>
+
+<!-- ─────────────────────────── photo dialog ───────────────────────── -->
+<dialog class="photo-dialog" id="photoDialog">
+  <form method="dialog" class="photo-inner">
+    <div class="dialog-head">
+      <h3>Search by photo</h3>
+      <button class="icon-btn" value="cancel" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="photo-body" id="photoBody">
+      <div class="drop-zone" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.8 7 8 4.8h8L17.2 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13.5" r="3.6"/></svg>
+        <p><strong>Drop a photo of the pack</strong></p>
+        <p class="muted">or pick a file, or use your camera</p>
+        <div class="photo-actions">
+          <button type="button" class="btn-secondary" id="pickFile">Choose file</button>
+          <button type="button" class="btn-secondary" id="useCamera">Take photo</button>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" hidden>
+        <input type="file" id="camInput" accept="image/*" capture="environment" hidden>
+      </div>
+      <div class="cam-stage" id="camStage" hidden>
+        <video id="camVideo" playsinline muted></video>
+        <button type="button" class="shutter" id="shutter" aria-label="Capture"></button>
+      </div>
+      <div class="photo-preview" id="photoPreview" hidden>
+        <img id="previewImg" alt="Selected product photo">
+        <div class="photo-result" id="photoResult"></div>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" hidden></div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p><strong>MediFind</strong> — prices and delivery estimates are scraped from public listings through
+       Bright Data and refreshed every 12 hours. Always confirm the final price and prescription
+       requirement on the seller's own site before ordering.</p>
+    <p class="footer-meta" id="footerMeta"></p>
+  </div>
+</footer>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

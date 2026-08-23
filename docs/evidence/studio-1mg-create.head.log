@@ -1,0 +1,38 @@
+Creating scraper template...
+Template created: c_mt4brsnv2m1udv1uq8
+Triggering AI generation...
+Generating scraper...
+Step:  — polling (attempt 1/600)
+Step: user_intent_analyzer — polling (attempt 2/600)
+Step: user_intent_analyzer — polling (attempt 3/600)
+Step: user_intent_analyzer — polling (attempt 4/600)
+Step: user_intent_analyzer — polling (attempt 5/600)
+Step: user_intent_analyzer — polling (attempt 6/600)
+Step: user_intent_analyzer — polling (attempt 7/600)
+Step: user_intent_analyzer — polling (attempt 8/600)
+Step: user_intent_analyzer — polling (attempt 9/600)
+Step: user_intent_analyzer — polling (attempt 10/600)
+Step: user_intent_analyzer — polling (attempt 11/600)
+Step: user_intent_analyzer — polling (attempt 12/600)
+Step: user_intent_analyzer — polling (attempt 13/600)
+Step: user_intent_analyzer — polling (attempt 14/600)
+Step: user_intent_analyzer — polling (attempt 15/600)
+Step: user_intent_analyzer — polling (attempt 16/600)
+Step: user_intent_analyzer — polling (attempt 17/600)
+Step: user_intent_analyzer — polling (attempt 18/600)
+Step: planner — polling (attempt 19/600)
+Step: output_schema_generator — polling (attempt 20/600)
+Step: output_schema_generator — polling (attempt 21/600)
+Step: output_schema_generator — polling (attempt 22/600)
+Step: output_schema_generator — polling (attempt 23/600)
+Step: output_schema_generator — polling (attempt 24/600)
+Step: output_schema_generator — polling (attempt 25/600)
+Step: output_schema_generator — polling (attempt 26/600)
+Step: preview_runner — polling (attempt 278/600)
+Step: preview_runner — polling (attempt 279/600)
+Step: preview_runner — polling (attempt 280/600)
+Step: preview_runner — polling (attempt 281/600)
+Step: preview_runner — polling (attempt 282/600)
+Step: preview_runner — polling (attempt 283/600)
+Done in 284 poll attempts.
+Output written to data/raw/studio-1mg-create.json

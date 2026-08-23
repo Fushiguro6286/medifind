@@ -1,0 +1,26 @@
+{
+  "name": "medifind",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MediFind - compare home-use medical devices, medicines and healthcare supplies across Indian health commerce platforms.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node --no-warnings server/index.js",
+    "dev": "node --no-warnings --watch server/index.js",
+    "refresh": "node --no-warnings server/scrape/runner.js --all",
+    "refresh:one": "node --no-warnings server/scrape/runner.js --company",
+    "studio:bootstrap": "node --no-warnings server/scrape/studio.js bootstrap",
+    "studio:heal": "node --no-warnings server/scrape/studio.js heal",
+    "doctor": "node --no-warnings server/doctor.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "@brightdata/cli": "^0.3.5",
+    "cheerio": "^1.2.0",
+    "express": "^4.21.2",
+    "playwright-core": "^1.62.1"
+  }
+}
